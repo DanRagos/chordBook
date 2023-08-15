@@ -13,8 +13,19 @@ const songSchema = mongoose.Schema({
         require: [true, "Please add the genre"]
     },
     releaseYear: {
-        type: String,
+        type: Number,
+        int: true,
         require: [true, "Please add the release year"]
+    },
+    releaseYear: {
+        type: Number,
+        int: true,
+        require: [true, "Please add the release year"]
+    }, 
+    hasChords: {
+        type: Boolean,
+        default: false,
+        
     }
 },
     {

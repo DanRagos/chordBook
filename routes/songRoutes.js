@@ -1,16 +1,10 @@
 const express = require("express");
+const { viewSongs, viewSong, updateSong, addSong } = require("../controller/songController");
 const router = express();
 
-router.get("/", async (req, res) => {
-    try {
-        const response = {
-            message: "Hello world"
-        };
-        return res.json(response);
-    } catch (error) {
-        console.error(error);
-      return  res.status(500).json({ error: "An error occurred" });
-    }
-});
+router.get("/", viewSongs);
+router.get("/:id", viewSong);
+router.put("/:id", updateSong);
+router.post("/",addSong)
 
 module.exports = router;
